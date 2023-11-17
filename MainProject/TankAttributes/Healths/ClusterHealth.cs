@@ -8,11 +8,11 @@ namespace MainProject.TankAttributes.Healths
 {
     internal class ClusterHealth : Health //Броня гарантированно выдержит N ударов
     {
-        public ClusterHealth(int modificator)
+        public ClusterHealth(float modificator)
         {
             HealthValue = 5 * ((modificator/100)+1);
         }
-        public override void Damaged(int damage)
+        public override void Damaged(float damage)
         {
             HealthValue -= 1;
         }

@@ -8,11 +8,11 @@ namespace MainProject.TankAttributes.Healths
 {
     internal class StandartHealth : Health
     {
-        public StandartHealth(int modificator) 
+        public StandartHealth(float modificator) 
         {
             HealthValue = 100 * ((modificator/100)+1);      
         }
-        public override void Damaged(int damage)
+        public override void Damaged(float damage)
         {
             HealthValue -= damage;
         }
