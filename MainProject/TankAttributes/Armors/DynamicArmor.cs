@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Armors
 {
-    internal class DynamicArmor
+    internal class DynamicArmor //берет весь урон кумулятивного снаряда на себя
     {
     }
 }

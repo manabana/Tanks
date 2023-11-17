@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Shells
 {
-    internal class CumulativeShell //Кумулятивный снаряд
+    internal class CumulativeShell : IShell //Кумулятивный снаряд
     {
+        public float Damage { get; } = 7f;
     }
 }

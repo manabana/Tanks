@@ -12,9 +12,9 @@ namespace MainProject.TankAttributes.Armors
         {
             ArmorValue = 100 * ((modificator / 100) + 1);
         }
-        public override void Damaged(float damage)
+        public override void Damaged(DamageInfo damage)
         {
-            ArmorValue -= damage;
+            ArmorValue -= damage.Shell.Damage;
         }
 
     }

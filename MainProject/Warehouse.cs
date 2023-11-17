@@ -11,7 +11,7 @@ namespace MainProject
     {
         private static Warehouse Instance;
         private Warehouse() { }
-        private List<IArmor> armors = new List<IArmor>();
+        private List<Armor> armors = new List<Armor>();
         private List<IWeapon> weapons = new List<IWeapon>();
         private List<IShell> shells = new List<IShell>();
         public static Warehouse GetInstance()
@@ -26,7 +26,7 @@ namespace MainProject
         {
 
         }
-        private IArmor GetRandArmor()
+        private Armor GetRandArmors(int count)
         {
             
         }

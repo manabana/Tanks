@@ -8,5 +8,6 @@ namespace MainProject.TankAttributes
 {
     internal interface IShell
     {
+        float Damage { get; }
     }
 }

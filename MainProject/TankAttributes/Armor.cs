@@ -9,6 +9,6 @@ namespace MainProject.TankAttributes
     internal abstract class Armor : IDamageable
     {
         public float ArmorValue { get; protected set; }
-        public abstract void Damaged(float damage);
+        public abstract void Damaged(DamageInfo damage);
     }
 }

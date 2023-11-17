@@ -60,6 +60,7 @@
     <Compile Include="Builders\MediumTankBuilder.cs" />
     <Compile Include="Builders\TankBuilder.cs" />
     <Compile Include="DamageDistribution.cs" />
+    <Compile Include="DamageInfo.cs" />
     <Compile Include="TankAttributes\Armors\ActiveArmor.cs" />
     <Compile Include="TankAttributes\Armors\CombinedArmor.cs" />
     <Compile Include="TankAttributes\Armors\DynamicArmor.cs" />

@@ -9,6 +9,6 @@ namespace MainProject.TankAttributes
 {
     internal interface IDamageable
     {
-        void Damaged(float damage);
+        void Damaged(DamageInfo damage);
     }
 }
