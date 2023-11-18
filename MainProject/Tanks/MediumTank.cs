@@ -8,5 +8,6 @@ namespace MainProject.Tanks
 {
     public class MediumTank : Tank
     {
+public override float modificator {get;} = 30f;
     }
 }
