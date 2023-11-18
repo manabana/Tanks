@@ -11,6 +11,6 @@ namespace MainProject.Builders
         public abstract void BuildArmor();
         public abstract void BuildWeapon();
         public abstract void BuildShell();
-        public abstract void GetResult();
+        public abstract Tank GetResult();
     }
 }
