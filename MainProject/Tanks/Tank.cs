@@ -19,6 +19,28 @@ namespace MainProject.Tanks
             Armor = armor;
             Health = health;
         }
+public void AddShell(IShell newshell)
+{
+if(Shell == null)
+{
+Shell = newshell;
+}
+}
+public void AddArmor(Armor newarmor)
+{
+if(Armor == null)
+{
+Armor = newarmor;
+}
+}
+public void AddHealth(Health newhealth)
+{
+if(Health == null)
+{
+Health = newhealth;
+}
+}
+
         public DamageInfo GetDamageInfo()
         {
             DamageInfo damage = new DamageInfo();
