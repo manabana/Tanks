@@ -8,6 +8,7 @@ namespace MainProject.Builders
 {
     public class LightTankBuilder : TankBuilder
     {
+LightTank tank = new LightTank();
         public override void BuildArmor()
         {
 
