@@ -8,6 +8,6 @@ namespace MainProject.Tanks
 {
     public class LightTank : Tank
     {
-public override float modificator {get;} = 0;
+public override float Modificator {get;} = 0f;
     }
 }
