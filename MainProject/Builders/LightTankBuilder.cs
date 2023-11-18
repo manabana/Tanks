@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Tanks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,9 @@ namespace MainProject.Builders
 {
     public class LightTankBuilder : TankBuilder
     {
-LightTank tank = new LightTank();
-        public override void BuildArmor()
+        public LightTankBuilder()
         {
-
+            tank = new LightTank();
         }
     }
 }

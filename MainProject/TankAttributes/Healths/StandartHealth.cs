@@ -12,9 +12,9 @@ namespace MainProject.TankAttributes.Healths
         {
             HealthValue = 100 * ((modificator/100)+1);      
         }
-        public override void Damaged(float damage)
+        public override void Damaged(DamageInfo damage)
         {
-            HealthValue -= damage;
+            HealthValue -= damage.Shell.Damage;
         }
     }
 }

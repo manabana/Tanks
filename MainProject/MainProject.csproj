@@ -78,6 +78,8 @@
     <Compile Include="TankAttributes\Shells\CumulativeShell.cs" />
     <Compile Include="TankAttributes\Shells\FragmentationShell.cs" />
     <Compile Include="TankAttributes\Shells\StandartShell.cs" />
+    <Compile Include="TankAttributes\Weapons\RiffledBarrel.cs" />
+    <Compile Include="TankAttributes\Weapons\SmoothBore.cs" />
     <Compile Include="Tanks\HeavyTank.cs" />
     <Compile Include="Tanks\LightTank.cs" />
     <Compile Include="Tanks\MediumTank.cs" />
@@ -124,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Strategies\" />
-    <Folder Include="TankAttributes\Weapons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

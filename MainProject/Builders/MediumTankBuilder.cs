@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Tanks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace MainProject.Builders
 {
     public class MediumTankBuilder : TankBuilder
     {
+        public MediumTankBuilder()
+        {
+            tank = new MediumTank();
+        }
     }
 }

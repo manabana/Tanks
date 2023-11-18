@@ -9,6 +9,6 @@ namespace MainProject.TankAttributes
     public abstract class Health : IDamageable
     {
         public float HealthValue { get; protected set; }
-        public abstract void Damaged(float damage);
+        public abstract void Damaged(DamageInfo damage);
     }
 }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MainProject.Tanks
+﻿namespace MainProject.Tanks
 {
     public class HeavyTank : Tank
     {
-public override float Modificator {get;} = 70f;
+        public override float Modificator { get; } = 70f;
     }
 }
