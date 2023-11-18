@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Armors
 {
-    public class SteelArmor : Armor
+    public class SteelArmor : Armor //Поглощает 20% урона
     {
-        public SteelArmor(float modificator)
+        public SteelArmor()
         {
-            ArmorValue = 100 * ((modificator / 100) + 1);
+            ArmorValue = 100;
         }
         public override void Damaged(DamageInfo damage)
         {
-            ArmorValue -= damage.Shell.Damage * 0.8f;
+            ArmorValue -= (damage.Shell.Damage * 0.8f) / 2;
         }
 
     }

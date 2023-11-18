@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MainProject.TankAttributes
+﻿namespace MainProject.TankAttributes
 {
     public abstract class Armor : IDamageable
     {
         public float ArmorValue { get; protected set; }
+        public Armor() { }
+        public void ApplyModifier(float modificator)
+        {
+            ArmorValue *= modificator;
+        }
+
         public abstract void Damaged(DamageInfo damage);
     }
 }
