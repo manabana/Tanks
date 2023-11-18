@@ -8,7 +8,11 @@ namespace MainProject.Builders
 {
     public abstract class TankBuilder
     {
-        public abstract void BuildArmor();
+        private abstract Tank;
+        public void BuildArmor()
+        {
+            
+        }
         public abstract void BuildWeapon();
         public abstract void BuildShell();
         public abstract Tank GetResult();
