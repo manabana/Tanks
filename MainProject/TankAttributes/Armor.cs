@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes
 {
-    internal abstract class Armor : IDamageable
+    public abstract class Armor : IDamageable
     {
         public float ArmorValue { get; protected set; }
         public abstract void Damaged(DamageInfo damage);

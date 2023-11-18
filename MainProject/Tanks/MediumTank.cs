@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.Tanks
 {
-    internal class MediumTank : Tank
+    public class MediumTank : Tank
     {
     }
 }

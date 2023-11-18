@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Armors
 {
-    internal class ActiveArmor
+    public class ActiveArmor
     {
     }
 }

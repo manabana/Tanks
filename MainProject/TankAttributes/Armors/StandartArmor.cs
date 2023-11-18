@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Armors
 {
-    internal class StandartArmor : Armor
+    public class StandartArmor : Armor
     {
         public StandartArmor(float modificator)
         {

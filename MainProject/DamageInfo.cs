@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MainProject
 {
-    internal struct DamageInfo
+    public struct DamageInfo
     {
         public Tank Tank { get; set; }
         public IShell Shell { get; set; }

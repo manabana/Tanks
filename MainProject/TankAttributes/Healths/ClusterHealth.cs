@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Healths
 {
-    internal class ClusterHealth : Health //Броня гарантированно выдержит N ударов
+    public class ClusterHealth : Health //Броня гарантированно выдержит N ударов
     {
         public ClusterHealth(float modificator)
         {

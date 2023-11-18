@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Healths
 {
-    internal class RegeneratingHealth : Health
+    public class RegeneratingHealth : Health
     {
         public RegeneratingHealth(int modificator) 
         {

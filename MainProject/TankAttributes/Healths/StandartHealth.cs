@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Healths
 {
-    internal class StandartHealth : Health
+    public class StandartHealth : Health
     {
         public StandartHealth(float modificator) 
         {

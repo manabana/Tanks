@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes
 {
-    internal interface IShell
+    public interface IShell
     {
         float Damage { get; }
     }

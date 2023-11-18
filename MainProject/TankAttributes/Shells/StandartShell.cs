@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Shells
 {
-    internal class StandartShell : IShell //Обыный снаряд
+    public class StandartShell : IShell //Обыный снаряд
     {
         public float Damage { get; } = 18f;
     }

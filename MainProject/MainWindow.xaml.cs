@@ -23,6 +23,8 @@ namespace MainProject
         public MainWindow()
         {
             InitializeComponent();
+            Warehouse warehouse = Warehouse.GetInstance();
+            warehouse.Fill(5);
         }
     }
 }

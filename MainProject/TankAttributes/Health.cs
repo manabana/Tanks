@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes
 {
-    internal abstract class Health : IDamageable
+    public abstract class Health : IDamageable
     {
         public float HealthValue { get; protected set; }
         public abstract void Damaged(float damage);

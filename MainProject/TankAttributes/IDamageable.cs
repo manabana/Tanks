@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes
 {
-    internal interface IDamageable
+    public interface IDamageable
     {
         void Damaged(DamageInfo damage);
     }

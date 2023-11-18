@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject
 {
-    internal class DamageDistribution
+    public class DamageDistribution
     {
     }
 }

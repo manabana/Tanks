@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.Builders
 {
-    internal abstract class TankBuilder
+    public abstract class TankBuilder
     {
         public abstract void BuildArmor();
         public abstract void BuildWeapon();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.Builders
 {
-    internal class LightTankBuilder : TankBuilder
+    public class LightTankBuilder : TankBuilder
     {
         public override void BuildArmor()
         {

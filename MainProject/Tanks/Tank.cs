@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.Tanks
 {
-    internal abstract class Tank
+    public abstract class Tank
     {
 
     }
