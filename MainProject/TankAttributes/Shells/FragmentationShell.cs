@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Shells
 {
-    public class FragmentationShell : IShell //Осколочный снаряд
+    public class FragmentationShell : IShell //Осколочный снаряд (+25% урон легким танкам, -70% тяжелым )
     {
         public float Damage { get; } = 15f;
     }

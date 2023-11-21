@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Weapons
 {
-    internal class SmoothBore
+    internal class SmoothBore : IWeapon
     {
+        public float MissChance { get; } = 0.13f;
     }
 }

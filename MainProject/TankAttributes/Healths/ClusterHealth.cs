@@ -8,10 +8,15 @@ namespace MainProject.TankAttributes.Healths
 {
     public class ClusterHealth : Health //Броня гарантированно выдержит N ударов
     {
-        public ClusterHealth(float modificator)
+        public ClusterHealth()
         {
-            HealthValue = 5 * ((modificator/100)+1);
+            HealthValue = 5;
         }
+        public override void ApplyModifier(float modificator)
+        {
+            HealthValue = (float)Math.Round(HealthValue * modificator);
+        }
+
         public override void Damaged(DamageInfo damage)
         {
             HealthValue -= 1;

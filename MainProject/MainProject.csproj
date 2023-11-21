@@ -61,7 +61,6 @@
     <Compile Include="Builders\TankBuilder.cs" />
     <Compile Include="DamageDistribution.cs" />
     <Compile Include="DamageInfo.cs" />
-    <Compile Include="TankAttributes\Armors\ActiveArmor.cs" />
     <Compile Include="TankAttributes\Armors\CombinedArmor.cs" />
     <Compile Include="TankAttributes\Armors\DynamicArmor.cs" />
     <Compile Include="TankAttributes\Armors\RegeneratingArmor.cs" />
@@ -78,6 +77,7 @@
     <Compile Include="TankAttributes\Shells\CumulativeShell.cs" />
     <Compile Include="TankAttributes\Shells\FragmentationShell.cs" />
     <Compile Include="TankAttributes\Shells\StandartShell.cs" />
+    <Compile Include="TankAttributes\Weapons\MuzzleBrakeBarrel.cs" />
     <Compile Include="TankAttributes\Weapons\RiffledBarrel.cs" />
     <Compile Include="TankAttributes\Weapons\SmoothBore.cs" />
     <Compile Include="Tanks\HeavyTank.cs" />

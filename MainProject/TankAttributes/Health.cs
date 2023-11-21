@@ -9,6 +9,14 @@ namespace MainProject.TankAttributes
     public abstract class Health : IDamageable
     {
         public float HealthValue { get; protected set; }
-        public abstract void Damaged(DamageInfo damage);
+        public virtual void Damaged(DamageInfo damage)
+        {
+            HealthValue -= damage.Shell.Damage;
+        }
+        public virtual void ApplyModifier(float modificator)
+        {
+            HealthValue *= modificator;
+        }
+
     }
 }

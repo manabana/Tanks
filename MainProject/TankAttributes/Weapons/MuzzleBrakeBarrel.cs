@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Weapons
 {
-    internal class RiffledBarrel : IWeapon
+    internal class MuzzleBrakeBarrel : IWeapon
     {
-        public float MissChance { get; } = 0.07f;
+        public float MissChance { get; } = 0f;
     }
 }

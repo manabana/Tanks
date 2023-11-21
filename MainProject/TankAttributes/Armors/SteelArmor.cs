@@ -15,6 +15,7 @@ namespace MainProject.TankAttributes.Armors
         public override void Damaged(DamageInfo damage)
         {
             ArmorValue -= (damage.Shell.Damage * 0.8f) / 2;
+            Health.Damaged(damage);
         }
 
     }

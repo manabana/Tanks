@@ -3,8 +3,9 @@
     public abstract class Armor : IDamageable
     {
         public float ArmorValue { get; protected set; }
+        public Health Health { get; set; }
         public Armor() { }
-        public void ApplyModifier(float modificator)
+        public virtual void ApplyModifier(float modificator)
         {
             ArmorValue *= modificator;
         }

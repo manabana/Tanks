@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Healths
 {
-    public class RegeneratingHealth : Health
+    public class RegeneratingHealth : Health //Реген. после каждого урона
     {
-        public RegeneratingHealth(int modificator) 
+        public RegeneratingHealth() 
         {
-            HealthValue = 100 * ((modificator / 100) + 1);
+            HealthValue = 100;
         }
         public override void Damaged(DamageInfo damage)
         {

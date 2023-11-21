@@ -19,10 +19,6 @@ namespace MainProject.TankAttributes.Armors
             {
                 ArmorValue -= damage.Shell.Damage;
             }
-            else
-            {
-                ArmorValue += damage.Shell.Damage;
-            }
         }
 
     }
