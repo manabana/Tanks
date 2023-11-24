@@ -55,12 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Builders\BuilderTools.cs" />
     <Compile Include="Builders\HeavyTankBuilder.cs" />
     <Compile Include="Builders\LightTankBuilder.cs" />
     <Compile Include="Builders\MediumTankBuilder.cs" />
     <Compile Include="Builders\TankBuilder.cs" />
     <Compile Include="DamageDistribution.cs" />
     <Compile Include="DamageInfo.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Strategies\LightestTarget.cs" />
+    <Compile Include="Strategies\LowHPTarget.cs" />
+    <Compile Include="Strategies\RandomTarget.cs" />
     <Compile Include="TankAttributes\Armors\CombinedArmor.cs" />
     <Compile Include="TankAttributes\Armors\DynamicArmor.cs" />
     <Compile Include="TankAttributes\Armors\RegeneratingArmor.cs" />
@@ -124,8 +129,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strategies\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

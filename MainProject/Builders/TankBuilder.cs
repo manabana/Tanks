@@ -11,12 +11,14 @@ namespace MainProject.Builders
     public abstract class TankBuilder
     {
         protected Tank tank;
+        protected Health health;
         protected Warehouse warehouse = Warehouse.GetInstance();
         public void BuildArmor()
         {
             List<Armor> armors = warehouse.armors;
             Random random = new Random();
             tank.AddArmor(armors[random.Next(armors.Count)]);
+            tank.Armor.Health = health;
         }
         public void BuildWeapon()
         {
@@ -35,6 +37,15 @@ namespace MainProject.Builders
             List<Health> healths = warehouse.healths;
             Random random = new Random();
             tank.AddHealth(healths[random.Next(healths.Count)]);
+            health = tank.Health;
+        }
+        public Tank AutoGenerateTank()
+        {
+            BuildHealth();
+            BuildWeapon();
+            BuildArmor();
+            BuildShell();
+            return tank;
         }
         public Tank GetResult() => tank;
     }

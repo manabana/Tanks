@@ -24,6 +24,10 @@ namespace MainProject
             }
             return Instance;
         }
+        public void GetWeapon()
+        {
+
+        }
         public void Fill(int TanksCount)
         {
             armors = GetRandArmors(TanksCount);

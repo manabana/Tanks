@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MainProject.Builders;
+using MainProject.Tanks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +22,54 @@ namespace MainProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Tank> team1 = new List<Tank>();
+        public List<Tank> team2 = new List<Tank>();
+            
         public MainWindow()
         {
             InitializeComponent();
+
             Warehouse warehouse = Warehouse.GetInstance();
-            warehouse.Fill(5);
+            warehouse.Fill(20);
+
+            int tankscount = 5;
+
+            #region Team 1
+            for (int i = 0; i < tankscount; i++)
+            {
+                var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
+                team1.Add(tank);
+            }
+            #endregion
+            #region Team 2
+            for (int i = 0; i < tankscount; i++)
+            {
+                var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
+                team1.Add(tank);
+            }
+
+            #endregion
+
+
+            TankBuilder builder = BuilderTools.GetRandomTankBuilder();
+            builder.BuildHealth();
+            builder.BuildArmor();
+            builder.BuildWeapon();
+            builder.BuildShell();
+            TankBuilder builder1 = BuilderTools.GetRandomTankBuilder();
+            builder1.BuildHealth();
+            builder1.BuildArmor();
+            builder1.BuildWeapon();
+            builder1.BuildShell();
+            TankBuilder builder2 = BuilderTools.GetRandomTankBuilder();
+            builder2.BuildHealth();
+            builder2.BuildArmor();
+            builder2.BuildWeapon();
+            builder2.BuildShell();
+
+
+
+
         }
     }
 }
