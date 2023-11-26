@@ -22,8 +22,8 @@ namespace MainProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Tank> team1 = new List<Tank>();
-        public List<Tank> team2 = new List<Tank>();
+        public static List<Tank> team1 = new List<Tank>();
+        public static List<Tank> team2 = new List<Tank>();
             
         public MainWindow()
         {

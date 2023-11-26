@@ -1,4 +1,6 @@
 ﻿using MainProject.TankAttributes;
+using MainProject.TankAttributes.Shells;
+using MainProject.TankAttributes.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +26,24 @@ namespace MainProject
             }
             return Instance;
         }
+        #region Полуение части танком (Выдать экземпляр и удалить из списка)
         public void GetWeapon()
         {
 
         }
+        public void GetShell()
+        {
+
+        }
+        public void GetArmor()
+        {
+
+        }
+        public void GetHealth()
+        {
+
+        }
+        #endregion
         public void Fill(int TanksCount)
         {
             armors = GetRandArmors(TanksCount);
@@ -58,22 +74,28 @@ namespace MainProject
         private List<IWeapon> GetRandWeapons(int count)
         {
             var random = new Random();
-            List<IWeapon> weaps = new List<IWeapon>();
+            List<IWeapon> weapons = new List<IWeapon>();
 
-            // Получаем все типы, которые являются наследниками BaseClass
-            var derivedTypes = typeof(IWeapon).Assembly.GetTypes()
-                                .Where(t => t.IsSubclassOf(typeof(IWeapon)))
-                                .ToList();
             for (int i = 0; i < count; i++)
             {
-                var randomIndex = random.Next(derivedTypes.Count);
-
-                // Создаём экземпляр случайного наследника
-                IWeapon randomInstance = (IWeapon)Activator.CreateInstance(derivedTypes[randomIndex]);
-                weaps.Add(randomInstance);
+                int j = random.Next(3);
+                switch (j)
+                {
+                    case 0:
+                        weapons.Add(new MuzzleBrakeBarrel());
+                        break;
+                    case 1:
+                        weapons.Add(new RiffledBarrel());
+                        break;
+                    case 2:
+                        weapons.Add(new SmoothBore());
+                        break;
+                    default:
+                        weapons.Add(new RiffledBarrel());
+                    break;
+                }
             }
-            return weaps;
-            // Выбираем случайный индекс из наших наследников
+            return weapons;
         }
         private List<Health> GetRandHealths(int count)
         {
@@ -81,9 +103,7 @@ namespace MainProject
             List<Health> heals = new List<Health>();
 
             // Получаем все типы, которые являются наследниками BaseClass
-            var derivedTypes = typeof(Health).Assembly.GetTypes()
-                                .Where(t => t.IsSubclassOf(typeof(Health)))
-                                .ToList();
+            var derivedTypes = typeof(Health).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(Health))).ToList();
             for (int i = 0; i < count; i++)
             {
                 var randomIndex = random.Next(derivedTypes.Count);
@@ -98,21 +118,28 @@ namespace MainProject
         private List<IShell> GetRandShells(int count)
         {
             var random = new Random();
-            List<IShell> IShell = new List<IShell>();
+            List<IShell> Shells = new List<IShell>();
 
-            // Получаем все типы, которые являются наследниками BaseClass
-            var derivedTypes = typeof(IShell).Assembly.GetTypes()
-                                .Where(t => t.IsSubclassOf(typeof(IShell)))
-                                .ToList();
             for (int i = 0; i < count; i++)
             {
-                var randomIndex = random.Next(derivedTypes.Count);
-
-                // Создаём экземпляр случайного наследника
-                IShell randomInstance = (IShell)Activator.CreateInstance(derivedTypes[randomIndex]);
-                IShell.Add(randomInstance);
+                int j = random.Next(3);
+                switch (j)
+                {
+                    case 0:
+                        Shells.Add(new CumulativeShell());
+                        break;
+                    case 1:
+                        Shells.Add(new FragmentationShell());
+                        break;
+                    case 2:
+                        Shells.Add(new StandartShell());
+                        break;
+                    default:
+                        Shells.Add(new StandartShell());
+                        break;
+                }
             }
-            return IShell;
+            return Shells;
             // Выбираем случайный индекс из наших наследников
         }
     }
