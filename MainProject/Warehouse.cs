@@ -30,28 +30,28 @@ namespace MainProject
         public IWeapon GetWeapon()
         {
             Random r = new Random();
-            var Instance = weapons[r.Next(weapons.count)];
+            var Instance = weapons[r.Next(weapons.Count)];
             weapons.Remove(Instance);
             return Instance;
         }
         public IShell GetShell()
         {
             Random r = new Random();
-            var Instance = shells[r.Next(weapons.count)];
+            var Instance = shells[r.Next(weapons.Count)];
             shells.Remove(Instance);
             return Instance;
         }
         public Armor GetArmor()
         {
             Random r = new Random();
-            var Instance = armors[r.Next(armors.count)];
+            var Instance = armors[r.Next(armors.Count)];
             armors.Remove(Instance);
             return Instance;
         }
         public Health GetHealth()
         {
             Random r = new Random();
-            var Instance = healths[r.Next(healths.count)];
+            var Instance = healths[r.Next(healths.Count)];
             healths.Remove(Instance);
             return Instance;
         }
