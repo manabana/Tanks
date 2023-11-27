@@ -8,3 +8,4 @@ namespace MainProject
         public Color TeamColor{get;set}
         public Strategy strategy{get;set;}
     }
+}
