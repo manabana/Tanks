@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MainProject
 {
-    public struct DamageInfo
+    public struct DamageInfo //Класс-хранитель информации о нанесенном уроне
     {
         public Tank Tank { get; set; }
         public IShell Shell { get; set; }

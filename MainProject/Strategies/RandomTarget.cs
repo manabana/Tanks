@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.Strategies
 {
-    internal class RandomTarget
+    internal class RandomTarget : Strategy
     {
     }
 }

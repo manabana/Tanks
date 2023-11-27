@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace MainProject
 {
-    public class Warehouse
+    public class Warehouse //Класс Склада
     {
         private static Warehouse Instance;
         private Warehouse() { }

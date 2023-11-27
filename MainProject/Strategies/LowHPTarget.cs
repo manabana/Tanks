@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.Strategies
 {
-    internal class LowHPTarget
+    internal class LowHPTarget : Strategy
     {
     }
 }
