@@ -66,10 +66,6 @@ namespace MainProject
             builder2.BuildArmor();
             builder2.BuildWeapon();
             builder2.BuildShell();
-
-
-
-
         }
     }
 }

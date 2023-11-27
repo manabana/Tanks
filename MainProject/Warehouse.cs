@@ -26,22 +26,34 @@ namespace MainProject
             }
             return Instance;
         }
-        #region Полуение части танком (Выдать экземпляр и удалить из списка)
-        public void GetWeapon()
+        #region Получение части танком (Выдать экземпляр и удалить из списка)
+        public IWeapon GetWeapon()
         {
-
+            Random r = new Random();
+            var Instance = weapons[r.Next(weapons.count)];
+            weapons.Remove(Instance);
+            return Instance;
         }
-        public void GetShell()
+        public IShell GetShell()
         {
-
+            Random r = new Random();
+            var Instance = shells[r.Next(weapons.count)];
+            shells.Remove(Instance);
+            return Instance;
         }
-        public void GetArmor()
+        public Armor GetArmor()
         {
-
+            Random r = new Random();
+            var Instance = armors[r.Next(armors.count)];
+            armors.Remove(Instance);
+            return Instance;
         }
-        public void GetHealth()
+        public Health GetHealth()
         {
-
+            Random r = new Random();
+            var Instance = healths[r.Next(healths.count)];
+            healths.Remove(Instance);
+            return Instance;
         }
         #endregion
         public void Fill(int TanksCount)
@@ -57,9 +69,7 @@ namespace MainProject
             List<Armor> arms = new List<Armor>();
 
             // Получаем все типы, которые являются наследниками BaseClass
-            var derivedTypes = typeof(Armor).Assembly.GetTypes()
-                                .Where(t => t.IsSubclassOf(typeof(Armor)))
-                                .ToList();
+            var derivedTypes = typeof(Armor).Assembly.GetTypes().Where(t => t.IsSubclassOf(typeof(Armor))).ToList();
             for (int i = 0; i < count; i++)
             {
                 var randomIndex = random.Next(derivedTypes.Count);

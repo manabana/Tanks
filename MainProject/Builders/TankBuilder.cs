@@ -15,28 +15,20 @@ namespace MainProject.Builders
         protected Warehouse warehouse = Warehouse.GetInstance();
         public void BuildArmor()
         {
-            List<Armor> armors = warehouse.armors;
-            Random random = new Random();
-            tank.AddArmor(armors[random.Next(armors.Count)]);
+            tank.AddArmor(warehouse.GetArmor());
             tank.Armor.Health = health;
         }
         public void BuildWeapon()
         {
-            List<IWeapon> weapons = warehouse.weapons;
-            Random random = new Random();
-            tank.AddWeapon(weapons[random.Next(weapons.Count)]);
+            tank.AddWeapon(warehouse.GetWeapon());
         }
         public void BuildShell()
         {
-            List<IShell> shells = warehouse.shells;
-            Random random = new Random();
-            tank.AddShell(shells[random.Next(shells.Count)]);
+            tank.AddShell(warehouse.GetShell());
         }
         public void BuildHealth()
         {
-            List<Health> healths = warehouse.healths;
-            Random random = new Random();
-            tank.AddHealth(healths[random.Next(healths.Count)]);
+            tank.AddHealth(warehouse.GetHealth());
             health = tank.Health;
         }
         public Tank AutoGenerateTank()
