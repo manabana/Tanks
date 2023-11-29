@@ -22,8 +22,8 @@ namespace MainProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static List<Tank> AlphaTeam = new List<Tank>();
-        public static List<Tank> BetaTeam = new List<Tank>();
+        public static Team AlphaTeam = new Team();
+        public static Team BetaTeam = new Team();
             
         public MainWindow()
         {
@@ -38,14 +38,14 @@ namespace MainProject
             for (int i = 0; i < tankscount; i++)
             {
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
-                team1.Add(tank);
+                AlphaTeam.Tanks.Add(tank);
             }
             #endregion
             #region Team 2
             for (int i = 0; i < tankscount; i++)
             {
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
-                team1.Add(tank);
+                BetaTeam.Tanks.Add(tank);
             }
 
             #endregion

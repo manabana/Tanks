@@ -63,9 +63,11 @@
     <Compile Include="DamageDistribution.cs" />
     <Compile Include="DamageInfo.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Gunplay.cs" />
     <Compile Include="Strategies\LightestTarget.cs" />
     <Compile Include="Strategies\LowHPTarget.cs" />
     <Compile Include="Strategies\RandomTarget.cs" />
+    <Compile Include="Strategies\Strategy.cs" />
     <Compile Include="TankAttributes\Armors\CombinedArmor.cs" />
     <Compile Include="TankAttributes\Armors\DynamicArmor.cs" />
     <Compile Include="TankAttributes\Armors\RegeneratingArmor.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Tanks\LightTank.cs" />
     <Compile Include="Tanks\MediumTank.cs" />
     <Compile Include="Tanks\Tank.cs" />
+    <Compile Include="Team.cs" />
     <Compile Include="Warehouse.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
