@@ -13,13 +13,16 @@ namespace MainProject
             AlphaTeam = team1;
             BetaTeam = team2;
         }
-        public void AlphaAttackBeta()
+        public void AlphaAttackBeta(Tank attacker)
         {
-            AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks);
+            var tank = AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks);
+            tank.Damaging(attacker.GetDamageInfo());
+
         }
-        public void BetaAttackAlpha()
+        public void BetaAttackAlpha(Tank attacker)
         {
-            BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks);
+            var tank = BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks);
+            tank.Damaging(attacker.GetDamageInfo());
         }
 
 

@@ -12,7 +12,7 @@ namespace MainProject.Strategies
     {
         public override Tank AttackSelection(List<Tank> Enemytanks)
         {
-            var tank = Enemytanks.OrderBy(p => p.Health).First();
+            var tank = Enemytanks.OrderBy(p => p.Health.HealthValue).First();
             return tank;
         }
     }

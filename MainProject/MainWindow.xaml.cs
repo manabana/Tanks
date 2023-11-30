@@ -1,19 +1,7 @@
 ﻿using MainProject.Builders;
 using MainProject.Tanks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MainProject
 {
@@ -24,7 +12,7 @@ namespace MainProject
     {
         public static Team AlphaTeam = new Team();
         public static Team BetaTeam = new Team();
-            
+        private Gunplay gunplay;
         public MainWindow()
         {
             InitializeComponent();
@@ -40,6 +28,7 @@ namespace MainProject
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
                 AlphaTeam.Tanks.Add(tank);
             }
+            AlphaTeam.TeamColor = Colors.Blue;
             #endregion
             #region Team 2
             for (int i = 0; i < tankscount; i++)
@@ -47,25 +36,48 @@ namespace MainProject
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
                 BetaTeam.Tanks.Add(tank);
             }
-
+            BetaTeam.TeamColor = Colors.Red;
             #endregion
+            gunplay = new Gunplay(AlphaTeam, BetaTeam);
 
 
-            TankBuilder builder = BuilderTools.GetRandomTankBuilder();
-            builder.BuildHealth();
-            builder.BuildArmor();
-            builder.BuildWeapon();
-            builder.BuildShell();
-            TankBuilder builder1 = BuilderTools.GetRandomTankBuilder();
-            builder1.BuildHealth();
-            builder1.BuildArmor();
-            builder1.BuildWeapon();
-            builder1.BuildShell();
-            TankBuilder builder2 = BuilderTools.GetRandomTankBuilder();
-            builder2.BuildHealth();
-            builder2.BuildArmor();
-            builder2.BuildWeapon();
-            builder2.BuildShell();
+        }
+        public void DisplayAlpha()
+        {
+
+        }
+        public void DisplayBeta()
+        {
+
+        }
+
+        private void Iterate(object sender, RoutedEventArgs e)
+        {
+            foreach (Tank tank in AlphaTeam.Tanks)
+            {
+                if (tank.Health.HealthValue <= 0)
+                {
+                    AlphaTeam.Tanks.Remove(tank);
+                }
+            }
+            foreach (Tank tank in BetaTeam.Tanks)
+            {
+                if (tank.Health.HealthValue <= 0)
+                {
+                    AlphaTeam.Tanks.Remove(tank);
+                }
+            }
+
+            foreach(Tank tank in AlphaTeam.Tanks)
+            {
+                gunplay.AlphaAttackBeta(tank);
+            }
+            foreach(Tank tank1 in BetaTeam.Tanks)
+            {
+                gunplay.BetaAttackAlpha(tank1);
+            }
+
+
         }
     }
 }

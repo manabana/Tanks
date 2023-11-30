@@ -51,5 +51,9 @@ namespace MainProject.Tanks
             damage.Tank = this;
             return damage;
         }
+        public void Damaging(DamageInfo damageinfo)
+        {
+            Armor.Damaged(damageinfo);
+        }
     }
 }
