@@ -64,6 +64,7 @@
     <Compile Include="DamageInfo.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Gunplay.cs" />
+    <Compile Include="MWMethods.cs" />
     <Compile Include="Strategies\LightestTarget.cs" />
     <Compile Include="Strategies\LowHPTarget.cs" />
     <Compile Include="Strategies\RandomTarget.cs" />

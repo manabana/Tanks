@@ -13,70 +13,51 @@ namespace MainProject
         public static Team AlphaTeam = new Team();
         public static Team BetaTeam = new Team();
         private Gunplay gunplay;
+        public int IterationsCount { get; private set; }
         public MainWindow()
         {
             InitializeComponent();
-
+            IterationsCount = 0;
             Warehouse warehouse = Warehouse.GetInstance();
             warehouse.Fill(20);
 
             int tankscount = 5;
 
-            #region Team 1
             for (int i = 0; i < tankscount; i++)
             {
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
                 AlphaTeam.Tanks.Add(tank);
             }
+            FillTeam(ref AlphaTeam, tankscount);
+            FillTeam(ref BetaTeam, tankscount);
             AlphaTeam.TeamColor = Colors.Blue;
-            #endregion
-            #region Team 2
-            for (int i = 0; i < tankscount; i++)
-            {
-                var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
-                BetaTeam.Tanks.Add(tank);
-            }
             BetaTeam.TeamColor = Colors.Red;
-            #endregion
             gunplay = new Gunplay(AlphaTeam, BetaTeam);
-
-
-        }
-        public void DisplayAlpha()
-        {
-
-        }
-        public void DisplayBeta()
-        {
-
         }
 
         private void Iterate(object sender, RoutedEventArgs e)
         {
-            foreach (Tank tank in AlphaTeam.Tanks)
+            RemoveDeads();
+            ShellExchange();
+            IterationsCount++;
+            IterationLBL.Content = IterationsCount.ToString();
+            if (AlphaTeam.Tanks.Count == 0) 
             {
-                if (tank.Health.HealthValue <= 0)
-                {
-                    AlphaTeam.Tanks.Remove(tank);
-                }
+                Win(BetaTeam);
             }
-            foreach (Tank tank in BetaTeam.Tanks)
+            else if(BetaTeam.Tanks.Count == 0)
             {
-                if (tank.Health.HealthValue <= 0)
-                {
-                    AlphaTeam.Tanks.Remove(tank);
-                }
+                Win(AlphaTeam);
             }
+        }
 
-            foreach(Tank tank in AlphaTeam.Tanks)
-            {
-                gunplay.AlphaAttackBeta(tank);
-            }
-            foreach(Tank tank1 in BetaTeam.Tanks)
-            {
-                gunplay.BetaAttackAlpha(tank1);
-            }
+        private void AutoIterate(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void StopIterating(object sender, RoutedEventArgs e)
+        {
 
         }
     }
