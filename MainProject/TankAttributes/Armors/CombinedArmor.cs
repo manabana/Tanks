@@ -20,9 +20,16 @@ namespace MainProject.TankAttributes.Armors
                 int index = new Random().Next(4);
                 if(index != 0)
                 {
-                    ArmorValue -= damage.Shell.Damage / 2;
-                    damage.Damage /= 2
-                    Health.Damaged(damage);
+                    if(damage.Shell is CumulativeShell)
+                    {
+                        Health.Damaged(damage);
+                    }
+                    else
+                    {
+                        ArmorValue -= damage.Shell.Damage / 2;
+                        damage.Damage /= 2;
+                        Health.Damaged(damage);
+                    }
                 }
             }
             else

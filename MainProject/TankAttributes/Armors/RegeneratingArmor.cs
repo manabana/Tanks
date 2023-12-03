@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MainProject.TankAttributes.Armors
 {
-    public class RegeneratingArmor : Armor
+    public class RegeneratingArmor : Armor // Регенерирует
     {
         public RegeneratingArmor()
         {
@@ -17,19 +17,26 @@ namespace MainProject.TankAttributes.Armors
         public override void Damaged(DamageInfo damage)
         {
             ArmorValue -= damage.Damage / 2;
-            if (ArmorValue > 0)
-            {
-                ArmorValue += 3;
-            }
+            
             if(ArmorValue > 0)
             {
-                damage.Damage /= 2;
-                Health.Damaged(damage);
-
+                if(damage.Shell is CumulativeShell)
+                {
+                    Health.Damaged(damage);
+                }
+                else
+                {
+                    damage.Damage /= 2;
+                    Health.Damaged(damage);
+                }
             }
             else
             {
                 Health.Damaged(damage);
+            }
+            if (ArmorValue > 0)
+            {
+                ArmorValue += 3;
             }
         }
 

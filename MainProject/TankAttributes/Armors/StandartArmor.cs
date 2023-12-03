@@ -17,13 +17,17 @@ namespace MainProject.TankAttributes.Armors
         {
             if(ArmorValue > 0)
             {
+                if(damage.Shell is CumulativeShell)
+                {
+                    Health.Damaged(damage);
+                }
                 ArmorValue -= damage.Shell.Damage / 2;
-                damage.Damage /= 2
+                damage.Damage /= 2;
                 Health.Damaged(damage);
             }
             else
             {
-                Health.Damaged(damage)
+                Health.Damaged(damage);
             }
         }
 
