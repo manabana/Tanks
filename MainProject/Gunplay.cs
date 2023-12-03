@@ -15,14 +15,20 @@ namespace MainProject
         }
         public void AlphaAttackBeta(Tank attacker)
         {
-            var tank = AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks);
-            tank.Damaging(attacker.GetDamageInfo());
-
+            if(new Random().NextDouble() < attacker.Weapon.MissChance)
+            {
+                var tank = AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks);
+                tank.Damaging(attacker.GetDamageInfo());
+            }
         }
         public void BetaAttackAlpha(Tank attacker)
         {
-            var tank = BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks);
-            tank.Damaging(attacker.GetDamageInfo());
+            if(new Random().NextDouble() < attacker.Weapon.MissChance)
+            {
+                var tank = BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks);
+                tank.Damaging(attacker.GetDamageInfo());
+            }
+            
         }
 
 
