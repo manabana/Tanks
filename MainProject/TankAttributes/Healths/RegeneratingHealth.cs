@@ -14,7 +14,7 @@ namespace MainProject.TankAttributes.Healths
         }
         public override void Damaged(DamageInfo damage)
         {
-            float dmg = damage.Shell.Damage;
+            float dmg = damage.Damage;
             HealthValue -= dmg;
             if (HealthValue > 0)
             {

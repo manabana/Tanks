@@ -37,6 +37,7 @@ namespace MainProject.Builders
             BuildWeapon();
             BuildArmor();
             BuildShell();
+            tank.ModifyAll();
             return tank;
         }
         public Tank GetResult() => tank;

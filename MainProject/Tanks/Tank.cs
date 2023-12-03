@@ -46,14 +46,17 @@ namespace MainProject.Tanks
 
         public DamageInfo GetDamageInfo()
         {
-            DamageInfo damage = new DamageInfo();
-            damage.Shell = Shell;
-            damage.Tank = this;
+            DamageInfo damage = new DamageInfo(this, Shell);
             return damage;
         }
         public void Damaging(DamageInfo damageinfo)
         {
             Armor.Damaged(damageinfo);
+        }
+        public void ModifyAll()
+        {
+            Armor.ApplyModifier(Modificator);
+            Health.ApplyModifier(Modificator);
         }
     }
 }

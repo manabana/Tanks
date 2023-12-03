@@ -15,10 +15,24 @@ namespace MainProject.TankAttributes.Armors
         }
         public override void Damaged(DamageInfo damage)
         {
-            if (damage.Shell is CumulativeShell)
+            if(ArmorValue > 0)
             {
-                ArmorValue -= damage.Shell.Damage;
+                if (damage.Shell is CumulativeShell)
+                {
+                    ArmorValue -= damage.Shell.Damage;
+                }
+                else
+                {
+                    ArmorValue -= damage.Shell.Damage/2;
+                    damage.Damage /= 2;
+                    Health.Damaged(damage);
+                }
             }
+            else
+            {
+                Health.Damaged(damage);
+            }
+            
         }
 
     }

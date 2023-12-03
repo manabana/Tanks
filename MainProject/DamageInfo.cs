@@ -8,9 +8,14 @@ using System.Threading.Tasks;
 
 namespace MainProject
 {
-    public struct DamageInfo //Класс-хранитель информации о нанесенном уроне
+    public class DamageInfo //Класс-хранитель информации о нанесенном уроне
     {
         public Tank Tank { get; set; }
         public IShell Shell { get; set; }
+        public float Damage {get; set;}
+        public DamageInfo(Tank tank, Shell shell)
+        {
+            Damage = Shell.Damage;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace MainProject.TankAttributes
         public float HealthValue { get; protected set; }
         public virtual void Damaged(DamageInfo damage)
         {
-            HealthValue -= damage.Shell.Damage;
+            HealthValue -= damage.Damage;
         }
         public virtual void ApplyModifier(float modificator)
         {
