@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.TankAttributes.Shells;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,8 @@ namespace MainProject.TankAttributes.Armors
                 else
                 {
                     ArmorValue -= (damage.Shell.Damage * 0.8f) / 2;
-                    (damage.Damage * 0.8f) /= 2;
+                    damage.Damage /= 2;
+                    damage.Damage *= 0.8f;
                     Health.Damaged(damage);
                 }
             }
