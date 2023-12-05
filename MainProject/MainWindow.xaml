@@ -9,14 +9,54 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <ListView>
-            <DataTemplate>
-                <Grid/>
-            </DataTemplate>
+        <ListView Name="LV">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="AR"/>
+                            <Label Content="{Binding Health}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="HP"/>
+                            <Label Content="{Binding Armor}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
         </ListView>
-        <Grid Grid.Row="1">
+        <ListView Name="LV2" Grid.Row="1">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="AR"/>
+                            <Label Content="{Binding Health}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="HP"/>
+                            <Label Content="{Binding Armor}"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="35"/>

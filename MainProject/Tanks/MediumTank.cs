@@ -2,6 +2,6 @@
 {
     public class MediumTank : Tank
     {
-        public override float Modificator { get; } = 30f;
+        public override float Modificator { get; } = 1.3f;
     }
 }

@@ -15,7 +15,9 @@ namespace MainProject
         public float Damage {get; set;}
         public DamageInfo(Tank tank, IShell shell)
         {
-            Damage = Shell.Damage;
+            this.Tank = tank;
+            this.Shell = shell;
+            Damage = shell.Damage;
         }
     }
 }

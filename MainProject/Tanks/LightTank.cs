@@ -2,6 +2,6 @@
 {
     public class LightTank : Tank
     {
-        public override float Modificator { get; } = 0f;
+        public override float Modificator { get; } = 1f;
     }
 }

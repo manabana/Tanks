@@ -15,7 +15,7 @@ namespace MainProject
         }
         public void AlphaAttackBeta(Tank attacker)
         {
-            if(new Random().NextDouble() < attacker.Weapon.MissChance)
+            if(new Random().NextDouble() > attacker.Weapon.MissChance)
             {
                 var tank = AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks);
                 tank.Damaging(attacker.GetDamageInfo());
@@ -23,7 +23,7 @@ namespace MainProject
         }
         public void BetaAttackAlpha(Tank attacker)
         {
-            if(new Random().NextDouble() < attacker.Weapon.MissChance)
+            if(new Random().NextDouble() > attacker.Weapon.MissChance)
             {
                 var tank = BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks);
                 tank.Damaging(attacker.GetDamageInfo());

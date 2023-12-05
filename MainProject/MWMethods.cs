@@ -41,6 +41,10 @@ namespace MainProject
         }
         private void FillTeam(ref Team team, int count)
         {
+            if(team == null)
+            {
+                team = new Team();
+            }
             for (int i = 0; i < count; i++)
             {
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();

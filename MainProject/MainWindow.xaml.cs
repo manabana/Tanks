@@ -10,8 +10,8 @@ namespace MainProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static Team AlphaTeam = new Team();
-        public static Team BetaTeam = new Team();
+        public static Team AlphaTeam;
+        public static Team BetaTeam;
         private Gunplay gunplay;
         public int IterationsCount { get; private set; }
         public MainWindow()
@@ -23,16 +23,13 @@ namespace MainProject
 
             int tankscount = 5;
 
-            for (int i = 0; i < tankscount; i++)
-            {
-                var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
-                AlphaTeam.Tanks.Add(tank);
-            }
+            
             FillTeam(ref AlphaTeam, tankscount);
             FillTeam(ref BetaTeam, tankscount);
             AlphaTeam.TeamColor = Colors.Blue;
             BetaTeam.TeamColor = Colors.Red;
             gunplay = new Gunplay(AlphaTeam, BetaTeam);
+
         }
 
         private void Iterate(object sender, RoutedEventArgs e)
@@ -49,6 +46,11 @@ namespace MainProject
             {
                 Win(AlphaTeam);
             }
+            LV.ItemsSource = null;
+            LV2.ItemsSource = null;
+            LV.ItemsSource = AlphaTeam.GetSimplyfied();
+            LV2.ItemsSource = BetaTeam.GetSimplyfied();
+
         }
 
         private void AutoIterate(object sender, RoutedEventArgs e)

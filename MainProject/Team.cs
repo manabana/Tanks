@@ -31,5 +31,19 @@ namespace MainProject
 
             }
         }
+        public List<SimplyfiedTank> GetSimplyfied()
+        {
+            var STs = new List<SimplyfiedTank>();
+            foreach(Tank tank in Tanks)
+            {
+                STs.Add(new SimplyfiedTank { Armor = tank.Armor.ArmorValue, Health = tank.Health.HealthValue });
+            }
+            return STs;
+        }
+    }
+    public class SimplyfiedTank
+    {
+        public float Health {  get; set; }
+        public float Armor { get; set; }
     }
 }
