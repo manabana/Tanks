@@ -9,6 +9,7 @@ namespace MainProject
 {
     public class Team
     {
+        public string Name { get; set; }
         public List<Tank> Tanks{get;set;}
         public Color TeamColor{ get; set; }
         public Strategy Strategy{get;set;}
@@ -36,7 +37,7 @@ namespace MainProject
             var STs = new List<SimplyfiedTank>();
             foreach(Tank tank in Tanks)
             {
-                STs.Add(new SimplyfiedTank { Armor = tank.Armor.ArmorValue, Health = tank.Health.HealthValue });
+                STs.Add(new SimplyfiedTank { Armor = (float)Math.Round(tank.Armor.ArmorValue, 2), Health = (float)Math.Round(tank.Health.HealthValue, 2) });
             }
             return STs;
         }

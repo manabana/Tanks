@@ -8,7 +8,21 @@ namespace MainProject.TankAttributes
 {
     public abstract class Health : IDamageable
     {
-        public float HealthValue { get; protected set; }
+        protected float hv;
+        public float HealthValue 
+        { 
+            get { return hv; }
+            protected set
+            {
+                float HV = value;
+                if (HV < 0f)
+                {
+                    HV = 0f;
+                }
+                hv = HV;
+
+            } 
+        }
         public virtual void Damaged(DamageInfo damage)
         {
             HealthValue -= damage.Damage;

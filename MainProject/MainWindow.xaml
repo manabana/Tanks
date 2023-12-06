@@ -7,67 +7,104 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="Black">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition Height="30"/>
-        </Grid.RowDefinitions>
-        <ListView Name="LV">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="AR"/>
-                            <Label Content="{Binding Health}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="HP"/>
-                            <Label Content="{Binding Armor}"/>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            
-        </ListView>
-        <ListView Name="LV2" Grid.Row="1">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="AR"/>
-                            <Label Content="{Binding Health}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Content="HP"/>
-                            <Label Content="{Binding Armor}"/>
-                        </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
-        <Grid Grid.Row="2">
+        <Grid x:Name="UI" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="35"/>
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="30"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="3" Click="Iterate" Margin="2" Content="Следующая Итерация"/>
-            <Button Grid.Column="2" Margin="2" Content="Автопереключение" Click="AutoIterate"/>
-            <Button Grid.Column="2" Margin="2" Content="Стоп" Click="StopIterating" Visibility="Collapsed"/>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="AlphaStrategy" Grid.Column="1" Text="(Strategy)" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17" Foreground="White">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="90"/>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <TextBlock x:Name="BetaStrategy" Grid.Column="1" Grid.Row="1" Text="(Strategy)" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="17" Foreground="White">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="90"/>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+            <ListView Name="LV">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="AR"/>
+                                <Label Content="{Binding Health}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="HP"/>
+                                <Label Content="{Binding Armor}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
 
-            <Label x:Name="IterationLBL" Foreground="White" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"/>
+            </ListView>
+            <ListView Name="LV2" Grid.Row="1">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="AR"/>
+                                <Label Content="{Binding Health}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="HP"/>
+                                <Label Content="{Binding Armor}"/>
+                            </StackPanel>
+                            <Grid>
+                                <Grid x:Name="BarrelD">
+                                    
+                                </Grid>
+                                <Grid x:Name="TowerD">
+                                    
+                                </Grid>
+                                <Grid x:Name="PillarD">
+                                    
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            <Grid Grid.Row="2" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="3" Click="Iterate" Margin="2" Content="Следующая Итерация"/>
+                <Button x:Name="AutoBTN" Grid.Column="2" Margin="2" Content="Автопереключение" Click="AutoIterate"/>
+                <Button x:Name="StopAutoBTN" Visibility="Collapsed" Grid.Column="2" Margin="2" Content="СТОП" Click="StopIterating"/>
+                <Button Grid.Column="2" Margin="2" Content="Стоп" Click="StopIterating" Visibility="Collapsed"/>
+
+                <Label x:Name="IterationLBL" Foreground="White" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14"/>
+            </Grid>
+        </Grid>
+        <Grid Visibility="Collapsed" x:Name="WinUI">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Content="(TEAM) WIN" x:Name="WinnerLBL" FontSize="45"  Foreground="White"/>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Click="CloseProgram" Content="❌" FontSize="30" Margin="10,20"/> 
+                    <Button Content="⭮" Click="RestartProgram" FontSize="30" Margin="10,20"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
