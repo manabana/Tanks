@@ -16,7 +16,7 @@ namespace MainProject
         public Team()
         {
             Tanks = new List<Tank>();
-            int i = new Random().Next(3);
+            int i = RandomTools.rand.Next(3);
             switch(i)
             {
                 case 0:

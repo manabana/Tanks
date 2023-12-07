@@ -1,7 +1,9 @@
 ﻿using MainProject.Builders;
 using MainProject.Strategies;
 using MainProject.Tanks;
+using System;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace MainProject
@@ -18,22 +20,25 @@ namespace MainProject
         public MainWindow()
         {
             InitializeComponent();
+            
+            
+        }
+        public void FirstActions(int tankCount, int warehouseItemCount)
+        {
             IterationsCount = 0;
             Warehouse warehouse = Warehouse.GetInstance();
-            warehouse.Fill(20);
+            warehouse.Fill(warehouseItemCount);
 
-            int tankscount = 5;
-
-
-            FillTeam(ref AlphaTeam, tankscount);
-            FillTeam(ref BetaTeam, tankscount);
+            FillTeam(ref AlphaTeam, tankCount);
+            FillTeam(ref BetaTeam, tankCount);
             AlphaTeam.TeamColor = Colors.Blue;
             BetaTeam.TeamColor = Colors.Red;
             AlphaTeam.Name = "Alpha";
             BetaTeam.Name = "Beta";
             gunplay = new Gunplay(AlphaTeam, BetaTeam);
             DisplayStrategies();
-            
+            UpdateLVs();
+
         }
         private void Iterate(object sender, RoutedEventArgs e)
         {
@@ -52,13 +57,16 @@ namespace MainProject
                     Win(AlphaTeam);
                 }
             }
+            UpdateLVs();
+
+        }
+        private void UpdateLVs()
+        {
             LV.ItemsSource = null;
             LV2.ItemsSource = null;
             LV.ItemsSource = AlphaTeam.GetSimplyfied();
             LV2.ItemsSource = BetaTeam.GetSimplyfied();
-
         }
 
-        
     }
 }

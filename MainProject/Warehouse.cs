@@ -139,7 +139,7 @@ namespace MainProject
                         Shells.Add(new CumulativeShell());
                         break;
                     case 1:
-                        Shells.Add(new FragmentationShell());
+                        Shells.Add(new UranicShell());
                         break;
                     case 2:
                         Shells.Add(new StandartShell());

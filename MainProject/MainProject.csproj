@@ -65,6 +65,7 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Gunplay.cs" />
     <Compile Include="MWMethods.cs" />
+    <Compile Include="RandomTools.cs" />
     <Compile Include="Strategies\LightestTarget.cs" />
     <Compile Include="Strategies\LowHPTarget.cs" />
     <Compile Include="Strategies\RandomTarget.cs" />
@@ -83,7 +84,7 @@
     <Compile Include="TankAttributes\IShell.cs" />
     <Compile Include="TankAttributes\IWeapon.cs" />
     <Compile Include="TankAttributes\Shells\CumulativeShell.cs" />
-    <Compile Include="TankAttributes\Shells\FragmentationShell.cs" />
+    <Compile Include="TankAttributes\Shells\UranicShell.cs" />
     <Compile Include="TankAttributes\Shells\StandartShell.cs" />
     <Compile Include="TankAttributes\Weapons\MuzzleBrakeBarrel.cs" />
     <Compile Include="TankAttributes\Weapons\RiffledBarrel.cs" />

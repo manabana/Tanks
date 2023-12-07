@@ -15,24 +15,35 @@ namespace MainProject.TankAttributes.Armors
         }
         public override void Damaged(DamageInfo damage)
         {
-            if(ArmorValue > 0)
+            if(damage.Shell is UranicShell) 
             {
-                if (damage.Shell is CumulativeShell)
+                if (RandomTools.rand.NextDouble() <= 0.1f)
                 {
-                    ArmorValue -= damage.Shell.Damage;
-                }
-                else
-                {
-                    ArmorValue -= damage.Shell.Damage/2;
-                    damage.Damage /= 2;
                     Health.Damaged(damage);
                 }
             }
             else
             {
-                Health.Damaged(damage);
+                if (ArmorValue > 0)
+                {
+                    if (damage.Shell is CumulativeShell)
+                    {
+                        ArmorValue -= damage.Shell.Damage;
+                    }
+                    else
+                    {
+                        ArmorValue -= damage.Shell.Damage / 2;
+                        damage.Damage /= 2;
+                        Health.Damaged(damage);
+                    }
+                }
+                else
+                {
+                    Health.Damaged(damage);
+                }
+
             }
-            
+
         }
 
     }

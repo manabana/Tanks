@@ -10,7 +10,7 @@ namespace MainProject.Builders
     {
         public static TankBuilder GetRandomTankBuilder()
         {
-            int i = new Random().Next(3);
+            int i = RandomTools.rand.Next(3);
             if (i == 0)
             {
                 return new HeavyTankBuilder();
@@ -23,7 +23,7 @@ namespace MainProject.Builders
             {
                 return new MediumTankBuilder();
             }
-            else { return null; }
+            else { return new MediumTankBuilder(); }
         }
     }
 }
