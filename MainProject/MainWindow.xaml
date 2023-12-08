@@ -59,24 +59,24 @@
                             </StackPanel>
                             <Grid Height="150" Width="75">
                                 <Grid x:Name="PillarD">
-                                    <Rectangle Visibility="Visible" x:Name="LightPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="100" Width="50"/>
-                                    <Rectangle Visibility="Collapsed" x:Name="MediumPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="115" Width="60"/>
-                                    <Rectangle Visibility="Collapsed" x:Name="Heavypillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="150" Width="75"/>
+                                    <Rectangle Visibility="{Binding LightP}" x:Name="LightPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="100" Width="50"/>
+                                    <Rectangle Visibility="{Binding MediumP}" x:Name="MediumPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="115" Width="60"/>
+                                    <Rectangle Visibility="{Binding HeavyP}" x:Name="Heavypillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="150" Width="75"/>
                                 </Grid>
                                 <Grid x:Name="TowerD">
                                     <Ellipse Width="40" Height="40" Fill="Gray" Stroke="Black"/>
                                 </Grid>
 
                                 <Grid x:Name="BarrelD">
-                                    <Rectangle x:Name="RifledB" Visibility="Visible" Width="5" Fill="#555555" Height="50" Stroke="Black" Margin="35,94,35,6"/>
-                                    <Rectangle x:Name="SmoothB"  Visibility="Collapsed" Width="5" Fill="#555555" Height="25" Stroke="Black" Margin="35,94,35,31"/>
-                                    <Grid Visibility="Collapsed" x:Name="BrakeB">
+                                    <Rectangle x:Name="RifledB" Visibility="{Binding RifleB}" Width="5" Fill="#555555" Height="50" Stroke="Black" Margin="35,94,35,6"/>
+                                    <Rectangle x:Name="SmoothB"  Visibility="{Binding SmoothB}" Width="5" Fill="#555555" Height="25" Stroke="Black" Margin="35,94,35,31"/>
+                                    <Grid Visibility="{Binding BrakeB}" x:Name="BrakeB">
                                         <Rectangle Width="5" Fill="#555555" Height="50" Stroke="Black" Margin="35,94,35,6"/>
                                         <Rectangle Width="7" Fill="#555555" Height="10" Stroke="Black" Margin="34,140,34,0"/>
                                     </Grid>
 
                                 </Grid>
-                                <Rectangle RadiusX="1" RadiusY="1" Stroke="Black" x:Name="TeamFlag" Width="20" Height="10" Fill="Black" Margin="28,32,27,108"/>
+                                <Rectangle RadiusX="1" RadiusY="1" Stroke="Black" x:Name="TeamFlag" Width="20" Height="10" Fill="{Binding Brush}" Margin="28,32,27,108"/>
                             </Grid>
                         </StackPanel>
                     </DataTemplate>
@@ -97,24 +97,24 @@
                                     <RotateTransform Angle="180"/>
                                 </Grid.LayoutTransform>
                                 <Grid x:Name="PillarD">
-                                    <Rectangle Visibility="Visible" x:Name="LightPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="100" Width="50"/>
-                                    <Rectangle Visibility="Collapsed" x:Name="MediumPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="115" Width="60"/>
-                                    <Rectangle Visibility="Collapsed" x:Name="Heavypillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="150" Width="75"/>
+                                    <Rectangle Visibility="{Binding LightP}" x:Name="LightPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="100" Width="50"/>
+                                    <Rectangle Visibility="{Binding MediumP}" x:Name="MediumPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="115" Width="60"/>
+                                    <Rectangle Visibility="{Binding HeavyP}" x:Name="Heavypillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="150" Width="75"/>
                                 </Grid>
                                 <Grid x:Name="TowerD">
                                     <Ellipse Width="40" Height="40" Fill="Gray" Stroke="Black"/>
                                 </Grid>
 
                                 <Grid x:Name="BarrelD">
-                                    <Rectangle x:Name="RifledB" Visibility="Visible" Width="5" Fill="#555555" Height="50" Stroke="Black" Margin="35,94,35,6"/>
-                                    <Rectangle x:Name="SmoothB"  Visibility="Collapsed" Width="5" Fill="#555555" Height="25" Stroke="Black" Margin="35,94,35,31"/>
-                                    <Grid Visibility="Collapsed" x:Name="BrakeB">
+                                    <Rectangle x:Name="RifledB" Visibility="{Binding RifleB}" Width="5" Fill="#555555" Height="50" Stroke="Black" Margin="35,94,35,6"/>
+                                    <Rectangle x:Name="SmoothB"  Visibility="{Binding SmoothB}" Width="5" Fill="#555555" Height="25" Stroke="Black" Margin="35,94,35,31"/>
+                                    <Grid Visibility="{Binding BrakeB}" x:Name="BrakeB">
                                         <Rectangle Width="5" Fill="#555555" Height="50" Stroke="Black" Margin="35,94,35,6"/>
                                         <Rectangle Width="7" Fill="#555555" Height="10" Stroke="Black" Margin="34,140,34,0"/>
                                     </Grid>
 
                                 </Grid>
-                                <Rectangle RadiusX="1" RadiusY="1" Stroke="Black" x:Name="TeamFlag" Width="20" Height="10" Fill="Black" Margin="28,32,27,108"/>
+                                <Rectangle RadiusX="1" RadiusY="1" Stroke="Black" x:Name="TeamFlag" Width="20" Height="10" Fill="{Binding Brush}" Margin="28,32,27,108"/>
                             </Grid>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="🛡"/>
