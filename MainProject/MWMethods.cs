@@ -37,8 +37,8 @@ namespace MainProject
         }
         private void RemoveDeads()
         {
-            AlphaTeam.Tanks.RemoveAll(p => p.Health.HealthValue <= 0);
-            BetaTeam.Tanks.RemoveAll(p => p.Health.HealthValue <= 0);
+            AlphaTeam.Tanks.RemoveAll(p => p.Health.HealthValue <= 0f);
+            BetaTeam.Tanks.RemoveAll(p => p.Health.HealthValue <= 0f);
             if (AlphaTeam.Tanks.Count <= 0)
             {
                 Win(BetaTeam);

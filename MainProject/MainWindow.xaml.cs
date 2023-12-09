@@ -48,17 +48,21 @@ namespace MainProject
                 ShellExchange();
                 IterationsCount++;
                 IterationLBL.Content = IterationsCount.ToString();
-                if (AlphaTeam.Tanks.Count == 0)
-                {
-                    Win(BetaTeam);
-                }
-                else if (BetaTeam.Tanks.Count == 0)
-                {
-                    Win(AlphaTeam);
-                }
+                WinCheck();
             }
             UpdateLVs();
 
+        }
+        void WinCheck()
+        {
+            if (AlphaTeam.Tanks.Count == 0)
+            {
+                Win(BetaTeam);
+            }
+            else if (BetaTeam.Tanks.Count == 0)
+            {
+                Win(AlphaTeam);
+            }
         }
         private void UpdateLVs()
         {

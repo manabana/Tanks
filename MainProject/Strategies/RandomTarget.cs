@@ -12,8 +12,7 @@ namespace MainProject.Strategies
     {
         public override Tank AttackSelection(List<Tank> Enemytanks)
         {
-            Random r = new Random();
-            return Enemytanks[r.Next(Enemytanks.Count)];
+            return Enemytanks[RandomTools.rand.Next(Enemytanks.Count)];
         }
 
     }

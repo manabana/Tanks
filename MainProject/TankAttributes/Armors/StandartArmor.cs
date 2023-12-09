@@ -31,9 +31,13 @@ namespace MainProject.TankAttributes.Armors
                     {
                         Health.Damaged(damage);
                     }
-                    ArmorValue -= damage.Shell.Damage / 2;
-                    damage.Damage /= 2;
-                    Health.Damaged(damage);
+                    else
+                    {
+                        ArmorValue -= damage.Shell.Damage / 2;
+                        damage.Damage /= 2;
+                        Health.Damaged(damage);
+
+                    }
                 }
                 else
                 {
