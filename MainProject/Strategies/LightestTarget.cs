@@ -19,7 +19,7 @@ namespace MainProject.Strategies
             }
             else
             {
-                return tanks[new Random().Next(tanks.Count)];
+                return tanks[RandomTools.rand.Next(tanks.Count)];
             }
             if(tanks.Count() == 0)
             {
@@ -27,7 +27,7 @@ namespace MainProject.Strategies
             }
             else
             {
-                return tanks[new Random().Next(tanks.Count)];
+                return tanks[RandomTools.rand.Next(tanks.Count)];
             }
             if(tanks.Count == 0)
             {
@@ -35,7 +35,7 @@ namespace MainProject.Strategies
             }
             else
             {
-                return tanks[new Random().Next(tanks.Count)];
+                return tanks[RandomTools.rand.Next(tanks.Count)];
             }
         }
     }

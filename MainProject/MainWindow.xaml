@@ -51,11 +51,11 @@
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="🛡"/>
-                                <Label Content="{Binding Health}"/>
+                                <Label Content="{Binding Armor}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="♥"/>
-                                <Label Content="{Binding Armor}"/>
+                                <Label Content="{Binding Health}"/>
                             </StackPanel>
                             <Grid Height="150" Width="75">
                                 <Grid x:Name="PillarD">
@@ -118,11 +118,11 @@
                             </Grid>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="🛡"/>
-                                <Label Content="{Binding Health}"/>
+                                <Label Content="{Binding Armor}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="♥"/>
-                                <Label Content="{Binding Armor}"/>
+                                <Label Content="{Binding Health}"/>
                             </StackPanel>
                             
                         </StackPanel>
