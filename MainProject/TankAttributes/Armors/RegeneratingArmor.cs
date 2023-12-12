@@ -23,13 +23,6 @@ namespace MainProject.TankAttributes.Armors
                 {
                     Health.Damaged(damage);
                 }
-                else
-                {
-                    if(Health.HealthValue < 100)
-                    {
-                        ArmorValue += 3;
-                    }
-                }
             }
             else
             {
@@ -50,10 +43,6 @@ namespace MainProject.TankAttributes.Armors
                 else
                 {
                     Health.Damaged(damage);
-                }
-                if (ArmorValue > 0)
-                {
-                    ArmorValue += 3;
                 }
 
             }

@@ -16,10 +16,6 @@ namespace MainProject.TankAttributes.Healths
         {
             float dmg = damage.Damage;
             HealthValue -= dmg;
-            if (HealthValue > 0)
-            {
-                HealthValue += 3;
-            }
         }
     }
 }

@@ -26,6 +26,17 @@ namespace MainProject
         }
         private void ShellExchange()
         {
+            #region Танки выбирают цель
+            foreach (Tank tank in AlphaTeam.Tanks)
+            {
+                gunplay.AlphaSelectBeta(tank);
+            }
+            foreach (Tank tank in BetaTeam.Tanks)
+            {
+                gunplay.BetaSelectAlpha(tank);
+            }
+            #endregion
+            #region Танки стреляют
             foreach (Tank tank in AlphaTeam.Tanks)
             {
                 gunplay.AlphaAttackBeta(tank);
@@ -34,6 +45,7 @@ namespace MainProject
             {
                 gunplay.BetaAttackAlpha(tank1);
             }
+            #endregion
         }
         private void RemoveDeads()
         {

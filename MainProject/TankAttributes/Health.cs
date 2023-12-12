@@ -31,6 +31,11 @@ namespace MainProject.TankAttributes
         {
             HealthValue *= modificator;
         }
+        public void Regenerate(float value)
+        {
+            HealthValue += value;
+        }
+
 
     }
 }

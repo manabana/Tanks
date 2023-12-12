@@ -25,7 +25,10 @@
         {
             ArmorValue *= modificator;
         }
-
+        public void Regenerate(float value)
+        {
+            ArmorValue += value;
+        }
         public abstract void Damaged(DamageInfo damage);
     }
 }

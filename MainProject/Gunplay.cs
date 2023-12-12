@@ -17,9 +17,15 @@ namespace MainProject
         {
             if(RandomTools.rand.NextDouble() > attacker.Weapon.MissChance)
             {
-                var tank = AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks);
-                tank.Damaging(attacker.GetDamageInfo());
+                if(attacker.SelectedTarget != null)
+                {
+                    attacker.SelectedTarget.Damaging(attacker.GetDamageInfo());
+                }
             }
+        }
+        public void AlphaSelectBeta(Tank attacker)
+        {
+            attacker.SelectTarget(AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks));
         }
         public void BetaAttackAlpha(Tank attacker)
         {
@@ -29,6 +35,10 @@ namespace MainProject
                 tank.Damaging(attacker.GetDamageInfo());
             }
             
+        }
+        public void BetaSelectAlpha(Tank attacker)
+        {
+            attacker.SelectTarget(BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks));
         }
 
 

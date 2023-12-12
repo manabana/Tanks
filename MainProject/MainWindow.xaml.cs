@@ -1,5 +1,7 @@
 ﻿using MainProject.Builders;
 using MainProject.Strategies;
+using MainProject.TankAttributes.Armors;
+using MainProject.TankAttributes.Healths;
 using MainProject.Tanks;
 using System;
 using System.Windows;
@@ -43,6 +45,7 @@ namespace MainProject
         private void Iterate(object sender, RoutedEventArgs e)
         {
             RemoveDeads();
+            Regen();
             if(AlphaTeam.Tanks.Count > 0 && BetaTeam.Tanks.Count > 0)
             {
                 ShellExchange();
@@ -52,6 +55,44 @@ namespace MainProject
             }
             UpdateLVs();
 
+        }
+        void Regen()
+        {
+            foreach(var item in AlphaTeam.Tanks)
+            {
+                if(item.Armor is RegeneratingArmor)
+                {
+                    if(item.Armor.ArmorValue > 0f && item.Armor.ArmorValue < 100)
+                    {
+                        item.Armor.Regenerate(3f);
+                    }
+                }
+                if (item.Health is RegeneratingHealth)
+                {
+                    if (item.Health.HealthValue > 0 && item.Health.HealthValue < 100)
+                    {
+                        item.Armor.Regenerate(3f);
+                    }
+                }
+            }
+            foreach(var item in BetaTeam.Tanks)
+            {
+                if (item.Armor is RegeneratingArmor)
+                {
+                    if (item.Armor.ArmorValue > 0f && item.Armor.ArmorValue < 100)
+                    {
+                        item.Armor.Regenerate(3f);
+                    }
+                }
+                if (item.Health is RegeneratingHealth)
+                {
+                    if (item.Health.HealthValue > 0 && item.Health.HealthValue < 100)
+                    {
+                        item.Armor.Regenerate(3f);
+                    }
+                }
+
+            }
         }
         void WinCheck()
         {

@@ -9,12 +9,7 @@ namespace MainProject.Tanks
         public Health Health { get; protected set; }
         public IWeapon Weapon { get; protected set; }
         public IShell Shell { get; protected set; }
-        //public Tank(Armor armor, Health health, IShell shell)
-        //{
-        //    Shell = shell;
-        //    Armor = armor;
-        //    Health = health;
-        //}
+        public Tank SelectedTarget { get; protected set; }
         public void AddShell(IShell newshell)
         {
             if (Shell == null)
@@ -57,6 +52,10 @@ namespace MainProject.Tanks
         {
             Armor.ApplyModifier(Modificator);
             Health.ApplyModifier(Modificator);
+        }
+        public void SelectTarget(Tank target)
+        {
+            SelectedTarget = target;
         }
     }
 }
