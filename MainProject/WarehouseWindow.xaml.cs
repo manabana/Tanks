@@ -1,4 +1,5 @@
 ﻿using MainProject.TankAttributes.Armors;
+using MainProject.TankAttributes.Healths;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,6 +68,15 @@ namespace MainProject
                 }
                 Items.Add(new Item(name, desc, ItemsType.Armor));
 
+            }
+            foreach (var item in Warehouse.healths)
+            {
+                string name;
+                string desc;
+                if (item is ClusterHealth)
+                {
+
+                }
             }
         }
         public class Item
