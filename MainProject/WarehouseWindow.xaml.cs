@@ -75,7 +75,39 @@ namespace MainProject
                 string desc;
                 if (item is ClusterHealth)
                 {
-
+                    name = "";
+                    desc = "";
+                }
+                else if(item is RegeneratingHealth)
+                {
+                    name = "";
+                    desc = "";
+                }
+                else if(item is StandartHealth)
+                {
+                    name = "";
+                    desc = "";
+                }
+                Items.Add(new Item(name, desc, ItemsType.Health));
+            }
+            foreach (var item in Warehouse.weapons)
+            {
+                string name;
+                string desc;
+                if(item is RiffledBarrel)
+                {
+                    name = "Нарезной ствол";
+                    desc = "Точность 93%";
+                }
+                else if (item is MuzzleBrakeBarrel)
+                {
+                    name = "Ствол с дульным тормозом";
+                    desc = "Точность 100%";
+                }
+                else if (item is SmoothBore)
+                {
+                    name = "Гладкоствольное орудие";
+                    desc = "Точность 87%";
                 }
             }
         }
