@@ -15,7 +15,7 @@ namespace MainProject
         }
         public void AlphaAttackBeta(Tank attacker)
         {
-            if(RandomTools.rand.NextDouble() > attacker.Weapon.MissChance)
+            if(RandomTools.rand.NextDouble() >= attacker.Weapon.MissChance)
             {
                 if(attacker.SelectedTarget != null)
                 {
@@ -23,19 +23,22 @@ namespace MainProject
                 }
             }
         }
+        public void BetaAttackAlpha(Tank attacker)
+        {
+            if (RandomTools.rand.NextDouble() >= attacker.Weapon.MissChance)
+            {
+                if (attacker.SelectedTarget != null)
+                {
+                    attacker.SelectedTarget.Damaging(attacker.GetDamageInfo());
+                }
+            }
+
+        }
         public void AlphaSelectBeta(Tank attacker)
         {
             attacker.SelectTarget(AlphaTeam.Strategy.AttackSelection(BetaTeam.Tanks));
         }
-        public void BetaAttackAlpha(Tank attacker)
-        {
-            if(RandomTools.rand.NextDouble() > attacker.Weapon.MissChance)
-            {
-                var tank = BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks);
-                tank.Damaging(attacker.GetDamageInfo());
-            }
-            
-        }
+        
         public void BetaSelectAlpha(Tank attacker)
         {
             attacker.SelectTarget(BetaTeam.Strategy.AttackSelection(AlphaTeam.Tanks));

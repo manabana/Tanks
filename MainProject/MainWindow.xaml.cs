@@ -113,5 +113,9 @@ namespace MainProject
             LV2.ItemsSource = BetaTeam.GetSimplyfied();
         }
 
+        private void WarehouseAssortiment(object sender, RoutedEventArgs e)
+        {
+            new WarehouseWindow(Warehouse.GetInstance()).Show();
+        }
     }
 }

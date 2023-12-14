@@ -1,8 +1,11 @@
 ﻿using MainProject.TankAttributes.Armors;
 using MainProject.TankAttributes.Healths;
+using MainProject.TankAttributes.Shells;
+using MainProject.TankAttributes.Weapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +16,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace MainProject
 {
@@ -28,6 +32,8 @@ namespace MainProject
             InitializeComponent();
             Items = new List<Item>();
             Warehouse = warehouse;
+            FillList();
+            DisplayItems.ItemsSource = Items;
         }
         void FillList()
         {
@@ -75,18 +81,23 @@ namespace MainProject
                 string desc;
                 if (item is ClusterHealth)
                 {
-                    name = "";
-                    desc = "";
+                    name = "Кластерное здоровье";
+                    desc = "Гарантированно выдержит N ударов.";
                 }
                 else if(item is RegeneratingHealth)
                 {
-                    name = "";
-                    desc = "";
+                    name = "Регенерирующее здоровья";
+                    desc = "Восстанавливает здоровье каждый ход.";
                 }
                 else if(item is StandartHealth)
                 {
-                    name = "";
-                    desc = "";
+                    name = "Стандартное здоровье.";
+                    desc = "Беспонтовое.";
+                }
+                else
+                {
+                    name="-";
+                    desc="-";
                 }
                 Items.Add(new Item(name, desc, ItemsType.Health));
             }
@@ -109,13 +120,37 @@ namespace MainProject
                     name = "Гладкоствольное орудие";
                     desc = "Точность 87%";
                 }
+                else { name="-"; desc="-"; }
+                Items.Add(new Item(name, desc, ItemsType.Weapon));
+            }
+            foreach(var item in Warehouse.shells)
+            {
+                string name;
+                string desc;
+                if (item is CumulativeShell)
+                {
+                    name = "Кумулятивный снаряд";
+                    desc = "Наносит урон в обход брони если броня не динаммиеская.";
+                }
+                else if (item is StandartShell)
+                {
+                    name = "Обычный снаряд";
+                    desc = "Беспонтонтовый";
+                }
+                else if (item is UranicShell)
+                {
+                    name = "Урановый снаряд";
+                    desc = "Шанс 10% унитожить танк с первого выстрела";
+                }
+                else { name = "-"; desc = "-"; }
+                Items.Add(new Item(name, desc, ItemsType.Shell));
             }
         }
         public class Item
         {
-            private string Name {  get; set; }
-            private ItemsType Type { get; set; }
-            private string Description { get; set; }
+            public string Name {  get; private set; }
+            public ItemsType Type { get; private set; }
+            public string Description { get; private set; }
             public Item(string name, string desc, ItemsType type)
             {
                 Name = name;
