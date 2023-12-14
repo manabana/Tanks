@@ -108,44 +108,44 @@ namespace MainProject
             }
             if(Tank.Shell is CumulativeShell)
             {
-                ShellName = "Кумулятивный снаряд";
-                ShellDesc = "Наносит урон в обход брони если броня не динамическая."
+                ShellName = "КC";
+                ShellDesc = "Наносит урон в обход брони если броня не динамическая.";
             }
             else if (Tank.Shell is StandartShell)
             {
-                ShellName = "Обычный снаряд";
+                ShellName = "ОC";
                 ShellDesc = "Беспонтонтовый";
             }
             else if (Tank.Shell is UranicShell)
             {
-                ShellName = "Урановый снаряд";
+                ShellName = "УC";
                 ShellDesc = "Шанс 10% унитожить танк с первого выстрела";
             }
 
             if (Tank.Armor is CombinedArmor)
             {
-                ShellName = "Комбинированная броня";
-                ShellDesc = "C вероятностью в 20% весь урон будет заблокирован.";
+                //ShellName = "КБ";
+                ArmorDesc = "C вероятностью в 20% весь урон будет заблокирован.";
             }
             else if (Tank.Armor is DynamicArmor)
             {
-                ShellName = "Динамическая броня";
-                ShellDesc = "Берет весь урон кумулятивного снаряда на себя.";
+                //ShellName = "ДБ";
+                ArmorDesc = "Берет весь урон кумулятивного снаряда на себя.";
             }
             else if (Tank.Armor is RegeneratingArmor)
             {
-                ShellName = "Регенерирующая броня";
-                ShellDesc = "Регенерирует после каждого урона.";
+                //ShellName = "РБ";
+                ArmorDesc = "Регенерирует после каждого хода.";
             }
             else if (Tank.Armor is StandartArmor)
             {
-                ShellName = "Стандартная броня";
-                ShellDesc = "Беспонтовая.";
+                //ShellName = "СтдБ";
+                ArmorDesc = "Беспонтовая.";
             }
             else if(Tank.Armor is SteelArmor)
             {
-                ShellName = "Стальная броня";
-                ShellDesc = "Поглощает 20% урона.";
+                //ShellName = "СтлБ";
+                ArmorDesc = "Поглощает 20% урона.";
 
             }
 

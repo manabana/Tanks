@@ -40,7 +40,7 @@
                     <RotateTransform Angle="90"/>
                 </TextBlock.LayoutTransform>
             </TextBlock>
-            <ListView Name="LV" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <ListView Name="LV" Foreground="{x:Null}" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" />
@@ -50,15 +50,15 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
-                                <Label ToolTip="{Binding ShellDesc}" Content="{Binding Shell}"/>
+                                <Label ToolTip="{Binding ShellDesc}" Content="{Binding ShellName}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" ToolTip="{Binding ArmorDesc}">
+                            <StackPanel Orientation="Horizontal">
                                 <Label Content="🛡"/>
-                                <Label Content="{Binding Armor}"/>
+                                <Label Content="{Binding Armor}" ToolTip="{Binding ArmorDesc}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" ToolTip="{Binding Healthdesk}">
+                            <StackPanel Orientation="Horizontal">
                                 <Label Content="♥"/>
-                                <Label Content="{Binding Health}"/>
+                                <Label Content="{Binding Health}" ToolTip="{Binding HealthDesc}"/>
                             </StackPanel>
                             <Grid Height="150" Width="75">
                                 <Grid x:Name="PillarD">
@@ -86,7 +86,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-            <ListView Name="LV2" Grid.Row="1" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <ListView Name="LV2" Grid.Row="1" Foreground="{x:Null}" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" />
@@ -119,16 +119,16 @@
                                 </Grid>
                                 <Rectangle RadiusX="1" RadiusY="1" Stroke="Black" x:Name="TeamFlag" Width="20" Height="10" Fill="{Binding Brush}" Margin="28,32,27,108"/>
                             </Grid>
-                            <StackPanel Orientation="Horizontal" ToolTip="{Binding ArmorDesc}">
+                            <StackPanel Orientation="Horizontal">
                                 <Label Content="🛡"/>
-                                <Label Content="{Binding Armor}"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal" ToolTip="{Binding HealthDesc}">
-                                <Label Content="♥"/>
-                                <Label Content="{Binding Health}"/>
+                                <Label Content="{Binding Armor}" ToolTip="{Binding ArmorDesc}"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <Label ToolTip="{Binding ShellDesc}" Content="{Binding Shell}"/>
+                                <Label Content="♥"/>
+                                <Label Content="{Binding Health}" ToolTip="{Binding HealthDesc}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label ToolTip="{Binding ShellDesc}" Content="{Binding ShellName}"/>
                             </StackPanel>
 
                             
