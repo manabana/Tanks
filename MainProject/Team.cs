@@ -1,6 +1,9 @@
 using MainProject.Strategies;
 using MainProject.TankAttributes;
 using MainProject.TankAttributes.Weapons;
+using MainProject.TankAttributes.Shells;
+using MainProject.TankAttributes.Healths;
+using MainProject.TankAttributes.Armors;
 using MainProject.Tanks;
 using System;
 using System.Collections.Generic;
@@ -48,8 +51,11 @@ namespace MainProject
     {
         public float Health {  get; set; }
         public float Armor { get; set; }
-
-        public Visibility LightP {  get; set; }
+        public string ArmorDesc { get; set; }
+        public string HealthDesc { get; set; }
+        public string ShellName {get; set;}
+        public string ShellDesc { get; set; }
+        public Visibility LightP { get; set; }
         public Visibility MediumP { get; set; }
         public Visibility HeavyP { get; set; }
 
@@ -100,7 +106,64 @@ namespace MainProject
                 RifleB = Visibility.Collapsed;
                 BrakeB = Visibility.Collapsed;
             }
+            if(Tank.Shell is CumulativeShell)
+            {
+                ShellName = "Кумулятивный снаряд";
+                ShellDesc = "Наносит урон в обход брони если броня не динамическая."
+            }
+            else if (Tank.Shell is StandartShell)
+            {
+                ShellName = "Обычный снаряд";
+                ShellDesc = "Беспонтонтовый";
+            }
+            else if (Tank.Shell is UranicShell)
+            {
+                ShellName = "Урановый снаряд";
+                ShellDesc = "Шанс 10% унитожить танк с первого выстрела";
+            }
 
+            if (Tank.Armor is CombinedArmor)
+            {
+                ShellName = "Комбинированная броня";
+                ShellDesc = "C вероятностью в 20% весь урон будет заблокирован.";
+            }
+            else if (Tank.Armor is DynamicArmor)
+            {
+                ShellName = "Динамическая броня";
+                ShellDesc = "Берет весь урон кумулятивного снаряда на себя.";
+            }
+            else if (Tank.Armor is RegeneratingArmor)
+            {
+                ShellName = "Регенерирующая броня";
+                ShellDesc = "Регенерирует после каждого урона.";
+            }
+            else if (Tank.Armor is StandartArmor)
+            {
+                ShellName = "Стандартная броня";
+                ShellDesc = "Беспонтовая.";
+            }
+            else if(Tank.Armor is SteelArmor)
+            {
+                ShellName = "Стальная броня";
+                ShellDesc = "Поглощает 20% урона.";
+
+            }
+
+            if (Tank.Health is ClusterHealth)
+            {
+                //Health = "Кластерное здоровье";
+                HealthDesc = "Гарантированно выдержит N ударов.";
+            }
+            else if(Tank.Health is RegeneratingHealth)
+            {
+                //name = "Регенерирующее здоровья";
+                HealthDesc = "Восстанавливает здоровье каждый ход.";
+            }
+            else if(Tank.Health is StandartHealth)
+            {
+                //name = "Стандартное здоровье.";
+                HealthDesc = "Беспонтовое.";
+            }
         }
     }
 }

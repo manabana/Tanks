@@ -40,7 +40,7 @@
                     <RotateTransform Angle="90"/>
                 </TextBlock.LayoutTransform>
             </TextBlock>
-            <ListView Name="LV">
+            <ListView Name="LV" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" />
@@ -50,10 +50,13 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
+                                <Label ToolTip="{Binding ShellDesc}" Content="{Binding Shell}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" ToolTip="{Binding ArmorDesc}">
                                 <Label Content="🛡"/>
                                 <Label Content="{Binding Armor}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" ToolTip="{Binding Healthdesk}">
                                 <Label Content="♥"/>
                                 <Label Content="{Binding Health}"/>
                             </StackPanel>
@@ -83,7 +86,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-            <ListView Name="LV2" Grid.Row="1">
+            <ListView Name="LV2" Grid.Row="1" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" />
@@ -116,14 +119,18 @@
                                 </Grid>
                                 <Rectangle RadiusX="1" RadiusY="1" Stroke="Black" x:Name="TeamFlag" Width="20" Height="10" Fill="{Binding Brush}" Margin="28,32,27,108"/>
                             </Grid>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" ToolTip="{Binding ArmorDesc}">
                                 <Label Content="🛡"/>
                                 <Label Content="{Binding Armor}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" ToolTip="{Binding HealthDesc}">
                                 <Label Content="♥"/>
                                 <Label Content="{Binding Health}"/>
                             </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label ToolTip="{Binding ShellDesc}" Content="{Binding Shell}"/>
+                            </StackPanel>
+
                             
                         </StackPanel>
                     </DataTemplate>

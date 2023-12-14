@@ -130,7 +130,7 @@ namespace MainProject
                 if (item is CumulativeShell)
                 {
                     name = "Кумулятивный снаряд";
-                    desc = "Наносит урон в обход брони если броня не динаммиеская.";
+                    desc = "Наносит урон в обход брони если броня не динамическая.";
                 }
                 else if (item is StandartShell)
                 {
