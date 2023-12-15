@@ -144,7 +144,10 @@
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
-                <Button Click="WarehouseAssortiment" Width="120" HorizontalAlignment="Left" Content="Остатки на складе"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="WarehouseAssortiment" Width="120" Content="Остатки на складе"/>
+                    <Button Click="PartsList" Width="120" Content="Список запчастей"/>
+                </StackPanel>
                 <Button Grid.Column="3" Click="Iterate" Margin="2" Content="Следующая Итерация"/>
                 <Button x:Name="AutoBTN" Grid.Column="2" Margin="2" Content="Автопереключение" Click="AutoIterate"/>
                 <Button x:Name="StopAutoBTN" Visibility="Collapsed" Grid.Column="2" Margin="2" Content="СТОП" Click="StopIterating"/>

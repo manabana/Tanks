@@ -85,6 +85,10 @@ namespace MainProject
         {
             new WarehouseWindow(Warehouse.GetInstance()).Show();
         }
+        private void PartsList(object sender, RoutedEventArgs e)
+        {
+            new PartsDBWindow().Show();
+        }
         void Regen()
         {
             foreach (var item in AlphaTeam.Tanks)

@@ -86,7 +86,7 @@ namespace MainProject
                 }
                 else if(item is RegeneratingHealth)
                 {
-                    name = "Регенерирующее здоровья";
+                    name = "Регенерирующее здоровье";
                     desc = "Восстанавливает здоровье каждый ход.";
                 }
                 else if(item is StandartHealth)
