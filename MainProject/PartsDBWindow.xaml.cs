@@ -39,7 +39,9 @@ namespace MainProject
                 new Item(12, "Урановый снаряд", ItemsType.Shell, "Шанс 10% унитожить танк с первого выстрела."),
                 new Item(13, "Обычный снаряд", ItemsType.Shell, "Беспонтонтовый."),
                 new Item(14, "Кумулятивный снаряд", ItemsType.Shell, "Наносит урон в обход брони если броня не динамическая."),
-
+                new Item(15, "Случайные цели", ItemsType.Strategy, "Выбирает случайную цель"),
+                new Item(16, "Самая легкая цель", ItemsType.Strategy, "Выбирает самый легкий танк"),
+                new Item(17, "Цель с наименьшим HP", ItemsType.Strategy, "Выбирает цель у которой меньше здоровья")
             };
         }
 

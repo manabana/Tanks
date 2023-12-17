@@ -4,6 +4,7 @@ namespace MainProject.Tanks
 {
     public abstract class Tank
     {
+        public int Id {  get; set; }
         public abstract float Modificator { get; }
         public Armor Armor { get; protected set; }
         public Health Health { get; protected set; }

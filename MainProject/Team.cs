@@ -42,13 +42,14 @@ namespace MainProject
             var STs = new List<SimplyfiedTank>();
             foreach(Tank tank in Tanks)
             {
-                STs.Add(new SimplyfiedTank (tank) { Armor = (float)Math.Round(tank.Armor.ArmorValue, 2), Health = (float)Math.Round(tank.Health.HealthValue, 2), Brush = new SolidColorBrush(TeamColor) });
+                STs.Add(new SimplyfiedTank (tank) {Armor = (float)Math.Round(tank.Armor.ArmorValue, 2), Health = (float)Math.Round(tank.Health.HealthValue, 2), Brush = new SolidColorBrush(TeamColor) });
             }
             return STs;
         }
     }
     public class SimplyfiedTank
     {
+        public int Id { get; set; }
         public float Health {  get; set; }
         public float Armor { get; set; }
         public string ArmorDesc { get; set; }
@@ -69,6 +70,7 @@ namespace MainProject
         public SimplyfiedTank(Tank tank)
         {
             Tank = tank;
+            Id = tank.Id;
             if(Tank is LightTank)
             {
                 MediumP = Visibility.Collapsed;

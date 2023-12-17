@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainProject"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="550" Width="800" Background="Black">
+        Title="MainWindow" MinHeight="550" Width="800" Background="Black" WindowState="Maximized">
     <Grid>
         <Grid x:Name="FirstForm" Visibility="Visible">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -60,13 +60,13 @@
                                 <Label Content="♥"/>
                                 <Label Content="{Binding Health}" ToolTip="{Binding HealthDesc}"/>
                             </StackPanel>
-                            <Grid Height="150" Width="75">
+                            <Grid Height="150" Width="75" x:Name="MT">
                                 <Grid x:Name="PillarD">
                                     <Rectangle Visibility="{Binding LightP}" x:Name="LightPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="100" Width="50"/>
                                     <Rectangle Visibility="{Binding MediumP}" x:Name="MediumPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="115" Width="60"/>
                                     <Rectangle Visibility="{Binding HeavyP}" x:Name="Heavypillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="150" Width="75"/>
                                 </Grid>
-                                <Grid x:Name="TowerD">
+                                <Grid x:Name="TowerD" Tag="{Binding Id}">
                                     <Ellipse Width="40" Height="40" Fill="Gray" Stroke="Black"/>
                                 </Grid>
 
@@ -86,7 +86,7 @@
                 </ListView.ItemTemplate>
 
             </ListView>
-            <ListView Name="LV2" Grid.Row="1" Foreground="{x:Null}" BorderBrush="{x:Null}">
+            <ListView Name="LV2" Grid.Row="1" Foreground="{x:Null}" BorderBrush="{x:Null}" VirtualizingStackPanel.IsVirtualizing="False">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal" />
@@ -104,7 +104,7 @@
                                     <Rectangle Visibility="{Binding MediumP}" x:Name="MediumPillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="115" Width="60"/>
                                     <Rectangle Visibility="{Binding HeavyP}" x:Name="Heavypillar" Fill="DarkGray" Stroke="Black" RadiusX="5" RadiusY="5"  Height="150" Width="75"/>
                                 </Grid>
-                                <Grid x:Name="TowerD">
+                                <Grid x:Name="TowerD" Tag="{Binding Id}">
                                     <Ellipse Width="40" Height="40" Fill="Gray" Stroke="Black"/>
                                 </Grid>
 
@@ -147,6 +147,8 @@
                 <StackPanel Orientation="Horizontal">
                     <Button Click="WarehouseAssortiment" Width="120" Content="Остатки на складе"/>
                     <Button Click="PartsList" Width="120" Content="Список запчастей"/>
+                    <Label Content="Трассировка выстрелов" Margin="20,0,0,0" Foreground="White"/>
+                    <CheckBox x:Name="TraceSwt" Content="Трассировка выстрелов" IsChecked="False"  Margin="5,0,0,0"  Click="ToggleButton_Click"/>
                 </StackPanel>
                 <Button Grid.Column="3" Click="Iterate" Margin="2" Content="Следующая Итерация"/>
                 <Button x:Name="AutoBTN" Grid.Column="2" Margin="2" Content="Автопереключение" Click="AutoIterate"/>
@@ -165,5 +167,7 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
+        <Canvas x:Name="CV" Visibility="Collapsed"/>
+
     </Grid>
 </Window>

@@ -171,6 +171,7 @@ namespace MainProject
             for (int i = 0; i < count; i++)
             {
                 var tank = BuilderTools.GetRandomTankBuilder().AutoGenerateTank();
+                tank.Id = i;
                 team.Tanks.Add(tank);
             }
         }

@@ -164,7 +164,8 @@ namespace MainProject
             Armor,
             Health,
             Weapon,
-            Shell
+            Shell,
+            Strategy
         }
     }
 }
